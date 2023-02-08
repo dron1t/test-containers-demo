@@ -3,6 +3,7 @@ package com.kainos.test2.bookingservice;
 import com.kainos.test2.bookingservice.handlers.AddBookingRequestHandler;
 import com.kainos.test2.bookingservice.handlers.BookingHandlerFactory;
 import com.kainos.test2.bookingservice.handlers.CommandHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -23,10 +24,10 @@ public class Demo2Application {
 
     @Bean
     public List<CommandHandler> getCommandHandlers() {
-        return List.of(addBookingRequestHandler());
+        return List.of(addBookingRequestHandler);
     }
 
-    private AddBookingRequestHandler addBookingRequestHandler() {
-        return new AddBookingRequestHandler();
-    }
+    @Autowired
+    private AddBookingRequestHandler addBookingRequestHandler;
+
 }

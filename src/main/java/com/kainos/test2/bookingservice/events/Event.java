@@ -1,13 +1,11 @@
 package com.kainos.test2.bookingservice.events;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
 
 import java.time.LocalDateTime;
 
-@Entity
 @Getter
 @Setter
 public abstract class Event<T> {
